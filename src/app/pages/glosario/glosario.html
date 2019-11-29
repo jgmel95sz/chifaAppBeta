@@ -1,0 +1,36 @@
+<ion-header>
+
+  <ion-navbar *ngIf="!showSearch">
+    <ion-title class="img">
+        <img src="../assets/imgs/nombre.png" height="24">
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="search()" ion-button icon-only>
+        <ion-icon name="search" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  
+  <ion-searchbar 
+  color="danger"
+  (ionInput)="find($event)"
+  *ngIf="showSearch"
+  (ionCancel)="onCancelSearch()"
+  placeholder="Buscar por el plato o ingrediente.."
+  [showCancelButton]="true">
+</ion-searchbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-fab right top>
+    <button ion-fab color="warning" (click)="shareImg(compartir.com,compartir.url,compartir.text)"><ion-icon name="share"></ion-icon></button>
+  </ion-fab>
+  <ion-list>
+    <ion-item *ngFor="let plato of glosario">
+      <h2>{{plato.name}}</h2>
+      <p>{{plato.dsc}}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

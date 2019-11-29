@@ -1,0 +1,106 @@
+page-place-static { 
+        .segundo{
+                float: right;
+            padding-right: 80px;
+
+        }
+    .scroll-content {
+        // How far down does the content begin
+        padding-top: 0 !important;
+        // Needs to be transparent so we see the fixed-content image-background
+        background-color: transparent;
+        
+        .swiper-pagination-bullet-active
+        {
+        background-color: #fff;
+        }
+    }
+
+    ion-navbar#second-header {
+        padding:0 !important;
+        .filters{
+            ion-fab[bottom]{
+                bottom: 25px;
+            }
+        }
+        .toolbar-background {
+            opacity: 0;
+        }
+        .toolbar-title {
+            margin-top:15px;
+            margin-left: 15px;
+            margin-right: 15px;
+            font-size: 1.6rem !important;
+            color: color($colors, primary);
+
+            span{
+                display: block;
+                font-size:1.2rem !important;
+                color: #000000;
+            }
+        }
+    }
+    ion-list{
+        ion-item{
+            h2{
+                color: color($colors,primary);
+                font-weight: 400;
+            }
+            p{
+                white-space: normal;
+                font-size:13px !important;
+                position: relative;
+                padding:5px;
+                padding-left:38px;
+                img{
+                    position: absolute;
+                    left: 0;
+                }
+            }
+            .item-inner{
+                border-bottom:0 !important;
+            }
+        }
+    }
+    #time{
+        margin-top:15px;
+        padding-left:15px;
+        padding-right: 15px;
+        ion-item{
+            border-bottom: 1px solid #E8E8E8 !important;
+            padding-top: 2px;
+            padding-bottom:2px;
+            font-size:1.2rem !important;
+            font-weight: 500;
+            p{
+                text-decoration: underline;
+            }
+            #horario{
+                ion-row{
+                    ion-col{
+                        padding:0;
+                        font-weight: 200;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .toolbar-ios ion-title {
+        left: 0!important; 
+        top: 0!important;
+        padding: 0 0px 0px!important;
+        position: inherit !important;
+        width: 100%!important;
+        height: 100%!important;
+        -webkit-transform: translateZ(0)!important;
+        transform: translateZ(0)!important;
+        pointer-events: none!important;
+    }
+    .toolbar-title-ios {
+        padding: 0 12px;
+        font-size: 2rem;
+        font-weight: 500;
+        color: #424242;
+    }
+}

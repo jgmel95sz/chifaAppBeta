@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-navbar align-title="center">
+    <ion-title class="img">
+        <img src="../assets/imgs/nombre.png" height="24">
+    </ion-title>
+  </ion-navbar>
+  <ion-toolbar>
+      <ion-row class="filters">
+        <ion-col no-padding col-12>
+          <ion-slides slidesPerView="3">
+            <ion-slide *ngFor="let category of _home.categories; let i = index">
+              <div class="normal {{i}}" *ngIf='category.class == "normal"' (click)="hola(category,i)">{{ category.nom }}</div>
+              <div class="num {{i}}" *ngIf='category.class == "num"' (click)="delete(category,i)">{{category.nom}}</div>
+            </ion-slide>
+          </ion-slides>
+        </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div id="map_canvas"></div>
+  <ion-fab right bottom>
+    <button ion-fab color="light" (click)="getPosition()"><ion-icon name="locate"></ion-icon></button>
+    <button ion-fab color="primary" (click)="places()"><ion-icon name="menu"></ion-icon></button>
+  </ion-fab>
+</ion-content>

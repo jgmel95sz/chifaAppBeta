@@ -1,0 +1,17 @@
+ionic start myApp tabs
+
+ng g c pages/posts/post --spect=false  //no creara el archivo de pruebas
+ --dry-run comando d e prueba
+
+COMPLENETOS necesario version IONIC 5
+npm install @angular/http@latest
+npm i -g rxjs-tslint
+rxjs-5-to-6-migrate -p[path/to/tsconfig.json]
+npm install --save rxjs-compat
+
+
+comands git
+git add -a
+git status
+git commit -m "28/11/2019"
+git push

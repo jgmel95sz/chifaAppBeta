@@ -1,0 +1,33 @@
+page-glosario-buscar {
+
+    ion-searchbar{
+        background: color($colors,primary) !important;
+        .searchbar-input{
+            border-radius: 50px !important;
+            padding: 3px 55px !important;
+            font-family: 'Montserrat';
+            font-weight: 300;
+            font-size:1.3rem !important;
+            color:#fff !important;
+            background: color($colors,danger) !important;
+            &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+                color: red;
+                opacity: 1; /* Firefox */
+            }
+
+            &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+                color: red;
+            }
+
+            &::-ms-input-placeholder { /* Microsoft Edge */
+                color: red;
+            }
+        }
+        .searchbar-search-icon{
+            color:#fff !important;
+        }
+        .button-clear-md-dark{
+            color:#fff !important;
+        }
+    }
+}

@@ -1,0 +1,46 @@
+page-historia {
+.bot{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    top: 35.5%;
+    left: 79%
+}
+    ion-content{
+        background:#F0F0F0 !important;
+    }
+    ion-card{
+        img{
+            height: 200px;
+        }
+        ion-card-content{
+            position:relative;
+            .card-title{
+                color:#D50000;
+                font-size:18px;
+                font-weight: 500;
+                margin-bottom:20px;
+            }
+        }
+    }
+    ion-slide{
+        margin-top:15px;
+    }
+    .swiper-pagination-fraction, .swiper-pagination-custom, .swiper-container-horizontal > .swiper-pagination-bullets{
+        top:10px;
+        bottom: auto;
+        
+        .swiper-pagination-bullet{
+            background:transparent ;
+            border:1px solid #9B9B9B ;
+        }
+        .swiper-pagination-bullet-active
+        {
+        background:#4A4A4A;
+        border:0px;
+        }
+    }
+    .swiper-wrapper{
+    }
+}

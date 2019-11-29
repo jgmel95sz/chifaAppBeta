@@ -1,0 +1,58 @@
+<animated-header >
+
+    <ion-header #ionHeader>
+  
+      <ion-navbar color="primary" >
+        <ion-title>
+          {{item.name}}
+        </ion-title>
+      </ion-navbar>
+  
+    </ion-header>
+  
+    <div id="fixed-menu-button" #fixedMenuButton>
+      <button ion-button menuToggle icon-only (click)="close()">
+        <ion-icon  ios="ios-arrow-back" md="md-arrow-back" color="primary-color-text" style="color:#fff !important"></ion-icon>
+      </button>
+    </div>
+  
+    <ion-content fullscreen #ionContent>
+      <ion-navbar color="light" id="second-header" #secondHeader>
+        <ion-row class="filters">
+            <ion-fab right bottom>
+              <button ion-fab color="warning" (click)="shareImg(item.com,item.url,item.text)"><ion-icon name="share"></ion-icon></button>
+            </ion-fab>
+            <ion-col no-padding col-12>
+                <ion-slides slidesPerView="1" pager>
+                    <ion-slide *ngFor="let img of imgs">
+                      <img [src]="img.img | imgreceta">
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+        <ion-title>
+         
+          <font style="vertical-align: inherit;"><font style="vertical-align: inherit;">
+            {{item.name}}
+          </font></font>
+        </ion-title>
+      </ion-navbar>
+      <div id="time">
+          <ion-row>
+            <ion-col>
+              {{item.tiempo}}
+            </ion-col>
+            <ion-col>
+              {{item.facil}}
+            </ion-col>
+          </ion-row>
+      </div>
+      <ion-list>
+        <ion-item>
+            <div [innerHTML]="safeHtml(item.descripcion)"></div>     
+        </ion-item>
+      </ion-list>
+  
+    </ion-content>
+  
+  </animated-header>

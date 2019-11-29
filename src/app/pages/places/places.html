@@ -1,0 +1,30 @@
+<!--<ion-header>
+  <ion-toolbar>
+      <ion-row class="filters">
+          <ion-col no-padding col-12>
+              <ion-slides slidesPerView="3">
+                  <ion-slide *ngFor="let category of _home.categories">
+                      <div [class.selected]="selectedCategory?.id === category.id">{{ category.nom }}</div>
+                  </ion-slide>
+              </ion-slides>
+          </ion-col>
+      </ion-row>
+  </ion-toolbar>
+</ion-header>-->
+
+
+<ion-content>
+  <ion-card *ngFor="let item of _home.chifa" [navParams]="{id: item.id}" [navPush]="PlaceStaticPage">
+     <img [src]="item.img | imgchifa">
+    <ion-card-content>
+      <h4 class="card-title">{{item.nombre}}</h4>
+      <p>{{item.dir}}</p>
+    </ion-card-content>
+  </ion-card> 
+  <ion-fab right bottom>
+    <button ion-fab color="primary" (click)="dismiss()"><ion-icon name="close"></ion-icon></button>
+  </ion-fab>
+    <ion-infinite-scroll (ionInfinite)="siguiente_pagina($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll> 
+</ion-content>

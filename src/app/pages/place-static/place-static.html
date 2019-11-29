@@ -1,0 +1,64 @@
+<animated-header >
+
+    <ion-header #ionHeader>
+  
+      <ion-navbar color="primary">
+        <ion-title>
+          Plato
+        </ion-title>
+      </ion-navbar>
+  
+    </ion-header>
+  
+    <div id="fixed-menu-button" #fixedMenuButton>
+      <button ion-button menuToggle icon-only (click)="close()">
+        <ion-icon name="md-arrow-back" color="primary-color-text" style="color:#fff !important"></ion-icon>
+      </button>
+    </div>
+  
+    <ion-content fullscreen #ionContent>
+      <ion-navbar color="light" id="second-header" #secondHeader>
+        <ion-row class="filters">
+            <ion-fab right bottom>
+              <button ion-fab color="warning" (click)="shareImg(item.com,item.url,item.text)"><ion-icon name="share"></ion-icon></button>
+            </ion-fab>
+            <ion-col no-padding col-12>
+                <ion-slides slidesPerView="1" pager>
+                    <ion-slide *ngFor="let item of img">
+                      <img [src]="item.img | imgchifa">
+                    </ion-slide>
+                </ion-slides>
+            </ion-col>
+        </ion-row>
+        <ion-title>
+        {{item.nombre}} <span>{{item.dir}}</span>
+        </ion-title>
+      </ion-navbar>
+      <ion-list id="time">
+            <ion-item>              
+              <p (click)="mostrar()" *ngIf="!showHorario" ><img src="../assets/imgs/time.png" height="20px" alt=""> Horario</p>
+
+              <div *ngIf="showHorario" id="horario" class="">
+                <img src="../assets/imgs/time.png" height="20px" alt="" class="nuevo" (click)="cerrar()">
+                <div class="segundo animated fadeInDown " >
+                  <ion-row *ngFor="let item of horario"  >
+                    <ion-col>
+                      {{item.d}}
+                    </ion-col>
+                    <ion-col>
+                      {{item.o}} a.m. a {{item.t}} p.m
+                    </ion-col>
+                  </ion-row>
+                </div>
+              </div>
+            </ion-item>
+            <ion-item>
+              <p (click)="openModal(item.id)"><img src="../assets/imgs/menu.png" height="20px" alt=""> Carta - Menú</p>
+            </ion-item>
+            <ion-item>
+              <p><img src="../assets/imgs/llamar.png" height="20px" alt=""> {{item.tel}}</p>
+            </ion-item>
+      </ion-list>
+    </ion-content>
+  
+  </animated-header>

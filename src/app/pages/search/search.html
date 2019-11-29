@@ -1,0 +1,14 @@
+<ion-content>
+<p class="nuestra_p" text-right (click)="closeModal()"><ion-icon name="close"></ion-icon></p>
+
+<div padding>
+	
+	<ion-slides pager>
+		<ion-slide style="background-color: none" *ngFor="let item of item">
+		<h2 class="text-center">{{item.nombre}}</h2>
+		<div [innerHTML]="safeHtml(item.desc)"></div> 
+		<img src="../assets/imgs/fondo.png" style=" position: absolute;top: 0;left: 0;right: 0;margin: 0 auto;">
+	  	</ion-slide>
+	</ion-slides>
+</div>   
+</ion-content>

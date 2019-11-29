@@ -1,0 +1,31 @@
+page-places {
+    padding-top: $navbar-md-height*2;
+    margin-bottom: $navbar-md-height;
+    .card-title{
+        font-size: 15px;
+        color: color($colors,primary);
+        font-weight: 500;
+    }
+    p{
+        font-size: 12px;
+        font-weight: 300;
+    }
+    ion-toolbar{
+        min-height: $navbar-md-height/1.2 !important;
+        .toolbar-background-md{
+            background:#fff;
+        }
+        ion-slide{
+            background:#EAEAEA;
+            color: #7B7B7B;
+            border-radius: 15px;
+            padding:6px 4px;
+            font-weight: 300;
+            margin-right: 3px;
+            font-size: 14px !important;
+        }
+    }
+    // ion-fab[bottom]{
+    //     bottom:70px;
+    // }
+}

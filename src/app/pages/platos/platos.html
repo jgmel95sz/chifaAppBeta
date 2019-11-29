@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-navbar *ngIf="!searching">
+    <ion-title class="img">
+        <img src="../assets/imgs/nombre.png" height="24">
+    </ion-title>
+    <ion-buttons end>
+      <button (click)="searching=!searching" ion-button icon-only>
+        <ion-icon name="search" color="light"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+  <ion-searchbar danger 
+  [(ngModel)]="myInput"
+  color="danger"
+  *ngIf="searching"
+  (input)="find($event)"
+  (ionCancel)="onCancelSearch()"
+  placeholder="Buscar por el plato o ingrediente.."
+  [showCancelButton]="true">
+</ion-searchbar>
+  <ion-toolbar>
+    <ion-segment [(ngModel)]="tipo" color="light">
+      <ion-segment-button value="Salado" >
+        Salado
+      </ion-segment-button>
+      <ion-segment-button value="Dulce">
+        Dulce
+      </ion-segment-button>
+      <ion-segment-button value="Agridulce">
+        Agridulce
+      </ion-segment-button>
+      <ion-segment-button value="Postre">
+        Postre
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [ngSwitch]="tipo">
+  <ion-list *ngSwitchCase="'Salado'">
+    <div *ngFor="let plato of platos" >
+    <ion-item *ngIf="plato.ingrediente == 'Salado'">
+      <ion-thumbnail item-start>
+        <img [src]="plato.img | imgpla">
+      </ion-thumbnail>
+      <h2>{{plato.name}}</h2>
+      <p>{{plato.dsc}}</p>
+    </ion-item>
+    </div>
+
+  </ion-list>
+  <ion-list *ngSwitchCase="'Dulce'">
+    <div *ngFor="let plato of platos"  >
+      <ion-item *ngIf="plato.ingrediente == 'Dulce'">
+        <ion-thumbnail item-start>
+          <img [src]="plato.img | imgpla">
+        </ion-thumbnail>
+        <h2>{{plato.name}}</h2>
+        <p>{{plato.dsc}}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'Agridulce'">
+    <div *ngFor="let plato of platos"  >
+      <ion-item *ngIf="plato.ingrediente == 'Agridulce'">
+        <ion-thumbnail item-start>
+          <img [src]="plato.img | imgpla">
+        </ion-thumbnail>
+        <h2>{{plato.name}}</h2>
+        <p>{{plato.dsc}}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+  <ion-list *ngSwitchCase="'Postre'">
+    <div *ngFor="let plato of platos"  >
+      <ion-item *ngIf="plato.ingrediente == 'Postre'">
+        <ion-thumbnail item-start>
+          <img [src]="plato.img | imgpla">
+        </ion-thumbnail>
+        <h2>{{plato.name}}</h2>
+        <p>{{plato.dsc}}</p>
+      </ion-item>
+    </div>
+  </ion-list>
+  <p class="empty" *ngIf="platos.length==0">Sin coincidencias</p>
+</ion-content>
